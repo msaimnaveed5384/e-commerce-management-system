@@ -1,0 +1,6 @@
+User Name: buyer
+Email: buyer@gmail.com
+Date Of Birth: 10/10/2004
+Password: 11111111
+Role: Buyer
+-----------------------------
