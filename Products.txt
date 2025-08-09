@@ -1,0 +1,9 @@
+Product ID: 644
+Seller ID: 354
+Product Name: PC
+Category: Electronics
+Price: 80000
+Quantity: 9
+Status: Approved
+Product Warranty: 12 Months Months
+--------------------------------
