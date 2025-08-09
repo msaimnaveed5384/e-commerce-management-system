@@ -1,0 +1,8 @@
+User Name: seller
+Email: seller@gmail.com
+Date Of Birth: 12/12/2003
+Password: 22222222
+Role: Seller
+Seller ID: 483
+Seller Status: Approved
+-----------------------------
