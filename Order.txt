@@ -1,0 +1,8 @@
+Order ID: 3003
+Buyer: buyer
+Date: 8/8/2025
+Products:
+- Product ID: 644, Seller ID: 354, Name: PC, Category: Electronics, Price: 80000, Quantity: 1
+Shipping Status: Pending
+Total Amount: 80000 PKR
+--------------------------------------
