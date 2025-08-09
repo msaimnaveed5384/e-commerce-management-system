@@ -5,6 +5,7 @@ A console-based C++ application that simulates a complete e-commerce platform wi
 FEATURES:
 
 1) AUTHENTICATION AND USER MANAGEMENT
+
 Registration with validation for email, date of birth, password, and role selection.
 
 Login with role-based access control.
@@ -18,6 +19,7 @@ Seller – Manage products and track revenue.
 Buyer – Browse, search, add to cart, and checkout.
 
 2) ADMIN FEATURES
+
 Approve or reject products before they are visible to buyers.
 
 Manage buyers and sellers: approve sellers, update seller info, remove accounts.
@@ -33,6 +35,7 @@ Delete products directly.
 View all registered buyers/sellers and their products.
 
 3) SELLER FEATURES
+
 Add Products in three categories:
 
 Electronics (with warranty)
@@ -50,6 +53,7 @@ View only their listed products.
 Track revenue per product based on orders.
 
 4) BUYER FEATURES
+
 Browse Products – View all approved products.
 
 Search Products by name.
@@ -71,6 +75,7 @@ Updates product quantities in inventory.
 View their order history.
 
 5) ORDER MANAGEMENT
+
 Orders are saved to Order.txt with details:
 
 Order ID, buyer name, date.
