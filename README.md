@@ -1,108 +1,81 @@
-E-COMMERCE MANAGEMENT SYSTEM
+# E-Commerce Management System
 
-A console-based C++ application that simulates a complete e-commerce platform with Admin, Seller, and Buyer roles. The system supports user management, product management, order processing, and reporting, with file-based data storage for persistence.
+A console-based C++ application that simulates a complete e-commerce platform with Admin, Seller, and Buyer roles. This project demonstrates object-oriented programming concepts, file-based data persistence, and a modular approach to software design. It is ideal for learning about user management, product handling, order processing, and role-based access control in C++.
 
-FEATURES:
+---
 
-1) AUTHENTICATION AND USER MANAGEMENT
+## Table of Contents
 
-Registration with validation for email, date of birth, password, and role selection.
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Technical Highlights](#technical-highlights)
+- [How to Run](#how-to-run)
+- [Future Improvements](#future-improvements)
+- [License](#license)
 
-Login with role-based access control.
+---
 
-Roles include:
+## Features
 
-Admin – Full platform control.
+### 1. Authentication and User Management
+- **Registration** with validation for email, date of birth, password, and role selection.
+- **Login** with role-based access control.
+- **Roles:**
+  - **Admin:** Full platform control.
+  - **Seller:** Manage products and track revenue.
+  - **Buyer:** Browse, search, add to cart, and checkout.
 
-Seller – Manage products and track revenue.
+### 2. Admin Features
+- Approve or reject products before they are visible to buyers.
+- Manage buyers and sellers: approve sellers, update seller info, remove accounts.
+- View reports:
+  - Total platform revenue.
+  - Most active buyers by order count.
+- Delete products directly.
+- View all registered buyers/sellers and their products.
 
-Buyer – Browse, search, add to cart, and checkout.
+### 3. Seller Features
+- Add products in three categories:
+  - **Electronics** (with warranty)
+  - **Books** (with author name)
+  - **Clothing** (with size)
+- Update products: name, category, price, quantity, and category-specific details.
+- Delete products.
+- View only their listed products.
+- Track revenue per product based on orders.
 
-2) ADMIN FEATURES
+### 4. Buyer Features
+- Browse all approved products.
+- Search products by name.
+- Shopping cart:
+  - Add items (quantity fixed to 1 per add).
+  - Remove items.
+  - View cart contents.
+- Checkout:
+  - Generate an order with unique ID.
+  - Update product quantities in inventory.
+- View order history.
 
-Approve or reject products before they are visible to buyers.
+### 5. Order Management
+- Orders are saved to `Order.txt` with details:
+  - Order ID, buyer name, date.
+  - Products purchased (ID, seller ID, name, category, price, quantity).
+  - Shipping status (default: Pending).
+  - Total order amount.
 
-Manage buyers and sellers: approve sellers, update seller info, remove accounts.
+### 6. File-Based Data Persistence
+- Data is stored and retrieved using text files:
+  - `Admins.txt` – Admin accounts
+  - `Seller.txt` – Seller accounts
+  - `Buyer.txt` – Buyer accounts
+  - `Products.txt` – All products (with category-specific info)
+  - `Order.txt` – Order records
 
-View reports:
+---
 
-Total platform revenue.
+## Project Structure
 
-Most active buyers by order count.
-
-Delete products directly.
-
-View all registered buyers/sellers and their products.
-
-3) SELLER FEATURES
-
-Add Products in three categories:
-
-Electronics (with warranty)
-
-Books (with author name)
-
-Clothing (with size)
-
-Update Products – name, category, price, quantity, and category-specific details.
-
-Delete Products.
-
-View only their listed products.
-
-Track revenue per product based on orders.
-
-4) BUYER FEATURES
-
-Browse Products – View all approved products.
-
-Search Products by name.
-
-Shopping Cart:
-
-Add items (quantity fixed to 1 per add).
-
-Remove items.
-
-View cart contents.
-
-Checkout:
-
-Generates an order with unique ID.
-
-Updates product quantities in inventory.
-
-View their order history.
-
-5) ORDER MANAGEMENT
-
-Orders are saved to Order.txt with details:
-
-Order ID, buyer name, date.
-
-Products purchased (ID, seller ID, name, category, price, quantity).
-
-Shipping status (default: Pending).
-
-Total order amount.
-
-6) FILE BASED DATA PERSISTANCE
-Data is stored and retrieved using text files:
-
-Admins.txt – Admin accounts.
-
-Seller.txt – Seller accounts.
-
-Buyer.txt – Buyer accounts.
-
-Products.txt – All products (with category-specific info).
-
-Order.txt – Order records.
-
-Project Structure
-bash
-Copy
-Edit
+```
 ├── main.cpp              # Application entry point
 ├── AuthSystem.h/.cpp     # Registration & Login logic
 ├── FileManager.h/.cpp    # File operations for products, users, and orders
@@ -111,36 +84,51 @@ Edit
 ├── Cart.h/.cpp           # Shopping cart template
 ├── Order.h/.cpp          # Order management
 ├── *.txt                 # Data storage files
+```
 
-TECHNICAL HIGHLIGHTS
-Object-Oriented Programming: Classes, inheritance, polymorphism.
+---
 
-Operator Overloading:
+## Technical Highlights
 
-Cart::operator+= to add products to cart.
+- **Object-Oriented Programming:** Classes, inheritance, and polymorphism for modular code.
+- **Operator Overloading:**  
+  - `Cart::operator+=` to add products to cart.
+  - `Cart::operator-=` to remove products from cart.
+- **File I/O:** Persistent storage using standard C++ file streams.
+- **Exception Handling:** Input validation and error handling.
+- **Dynamic Casting:** Identify product category at runtime.
 
-Cart::operator-= to remove products from cart.
+---
 
-File I/O: Persistent storage using standard C++ file streams.
+## How to Run
 
-Exception Handling: Input validation and error handling.
+1. **Compile all `.cpp` files together.**  
+   Example using g++:
+   ```bash
+   g++ main.cpp AuthSystem.cpp FileManager.cpp User.cpp Product.cpp Cart.cpp Order.cpp -o ecommerce
+   ```
+   *(Adjust the command if your file names or structure differ.)*
 
-Dynamic Casting: Identify product category at runtime.
+2. **Run the executable.**
+   ```bash
+   ./ecommerce
+   ```
 
-HOW TO RUN
-Compile all .cpp files together in your C++ compiler (e.g., g++, Visual Studio, Code::Blocks).
+3. **Interact with the system.**
+   - Use the main menu to Login, Register, or view Info.
+   - Follow the role-specific menus for Admin, Seller, or Buyer features.
 
-Run the executable.
+---
 
-Use the main menu to Login, Register, or view Info.
+## Future Improvements
 
-Follow role-specific menus to interact with the system.
+- Add shipping status updates for orders.
+- Allow quantity selection for cart items.
+- Implement discounts and promotions.
+- Introduce a GUI interface for enhanced user experience.
 
-FUTURE IMPROVEMENTS
-Add shipping status updates for orders.
+---
 
-Allow quantity selection for cart items.
+## License
 
-Implement discounts and promotions.
-
-Introduce a GUI interface for better user experience.
+This project is open source and available under the [MIT License](LICENSE).
